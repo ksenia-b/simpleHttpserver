@@ -7,3 +7,5 @@ http.createServer(function(req, res){
 	res.write('I am little cute girl'); //res.write(txt) пишет текст в ответ
 	res.end(); //res.end(txt) – завершает запрос ответом
 }).listen(1488);
+
+
