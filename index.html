@@ -5,6 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-Hello, world!
+Hello, world!<br/>
+    <form>
+        <input type = 'text' id = 'input' style = 'width: 30%;'></input>
+    </form>
+    <button id = 'but' onclick='allo()'>OK</button>
+
+    <script src = "https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script>
+        var socket = io();
+
+        var text = document.getElementById('input');
+
+        function allo(){
+            socket.emit('msg', text.value);
+        }
+    </script>
+
 </body>
 </html>

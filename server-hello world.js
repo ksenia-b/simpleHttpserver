@@ -14,3 +14,10 @@ app.use('/client', express.static(__dirname + '/client'));
 server.listen(port);
 
 console.log('>> Server is running');
+
+var io = require('socket.io')(server,{});
+io.sockets.on('connection', function(socket){
+	socket.on('msg', function(data){
+		console.log('chat'+data);
+	});
+});
